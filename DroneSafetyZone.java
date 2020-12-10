@@ -45,7 +45,33 @@ public class DroneSafetyZone
 	
 	public String SafteyAlert(MyCircle[] swarm){
 		
+		int i=0;
+		int j=0
+		for(int i=0; i<swarm.length;i++) {
+			for(int j=i+1;j<swarm.length;j++) {
+				int x1=swarm[i].getX();
+				int y1=swarm[i].getY();
+				double r1=swarm[i].getRadius();
+				
+				int x2=swarm[j].getX();
+				int y2=swarm[j].getY();
+				double r1=swarm[j].getRadius();
+				
+				int distofCent= Math.pow((x1-x2),2)+Math.pow((y1-y2),2);
+				double sumRadii = Math.pow((r1+r2),2);
+				
+				if(sumRadii> distofCent) {
+					return "Red";
+				}
+				else if(sumRadii== distofCent) {
+					return "Yellow";
+				}
+			}
+		}
 		
+		
+		
+		return "Green";
 		
 		
 		
